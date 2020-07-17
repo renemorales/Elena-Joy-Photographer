@@ -3,13 +3,13 @@
 /********************[Global]*/
 
 @font-face {
-  font-family: 'Ruh1';
-  src: url('/fonts/FrankRuhlLibre-Regular.ttf');
+  font-family: "Ruh1";
+  src: url("../fonts/FrankRuhlLibre-Regular.ttf");
 }
 
 @font-face {
-  font-family: 'Vibes';
-  src: url('/fonts/GreatVibes-Regular.ttf');
+  font-family: "Vibes";
+  src: url("../fonts/GreatVibes-Regular.ttf");
 }
 
 html {
@@ -28,7 +28,7 @@ html {
 
 h1 {
   font-size: var(--header1);
-  font-family: 'Vibes', sans-serif;
+  font-family: "Vibes", sans-serif;
 }
 
 li,
@@ -75,6 +75,8 @@ body {
 
 .main-head {
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+   position: relative; 
 }
 
 nav {
@@ -98,12 +100,9 @@ nav {
 
 .hero {
   min-height: 90vh;
-  width: 95%;
   margin: 0 0 0 auto;
   display: flex;
   flex-wrap: wrap;
-  z-index: 2;
-  /* position: relative; */
   overflow: hidden;
 }
 
@@ -114,6 +113,8 @@ nav {
 
 .hero-introduction p {
   padding: 5rem 10rem;
+  letter-spacing: 1.2px;
+  line-height: 1.5;
 }
 
 .hero-introduction h2 {
@@ -148,6 +149,7 @@ nav {
   animation: plant-entrance 1.5s ease-in-out 0.5s forwards,
     plant-shake 2.5s infinite ease alternate-reverse 2s;
   transform-origin: bottom;
+  max-height: 80%;
 }
 
 .plant2 {
@@ -189,12 +191,28 @@ nav {
   }
 }
 
+.burger,
+.menu-check{
+  display: none;
+}
+
 
 /* reponsive site */
 
 @media screen and (max-width: 736px) {
+
+  .hero{
+    width: 100%;
+  }
+
+.hero-introduction p {
+  padding: 5rem 3rem;
+
+}
+
   .burger {
     position: relative;
+    display: block;
   }
 
   .burger span {
@@ -202,6 +220,7 @@ nav {
     background-color: var(--gray-text);
     margin: 0.5rem 0rem;
     display: block;
+  transition:  all 0.8s ease-in-out;
   }
 
   .nav-links a {
@@ -224,6 +243,7 @@ nav {
   }
 
   .menu-check {
+    display: block;
     position: absolute;
     top: 50%;
     right: 5%;
@@ -235,11 +255,31 @@ nav {
     z-index: 100;
   }
 
-  .menu-check:checked+.nav-links {
+  .menu-check:checked + .nav-links {
     transform: translate(-100%);
   }
 
-  .menu-check:checked+.burger span {
+  .menu-check:checked ~ .burger span {
     background: whitesmoke;
   }
+
+  .menu-check:checked ~ .burger span:nth-child(1) {
+    transform: rotateZ(45deg)  translateY(300%);
+  /*transition:  0.8s ease-in-out;*/
+  }
+
+  .menu-check:checked ~ .burger span:nth-child(2) {
+  transform: translateX(-175%);
+  transition:  1.5s ease-in-out;
+background: transparent;
+  box-shadow: none;
+}
+
+  .menu-check:checked ~ .burger span:nth-child(3) {
+    transform: rotateZ(-45deg) translateY(-300%);
+  /*transition:  0.8s ease-in-out;*/
+
+}
+
+
 }
