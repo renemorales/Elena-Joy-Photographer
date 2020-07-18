@@ -45,7 +45,7 @@ h2 {
 }
 
 h3 {
-  font-size: var(--header13);
+  font-size: var(--header3);
 }
 
 h4,
@@ -100,6 +100,7 @@ nav {
 
 .hero {
   min-height: 90vh;
+  width: 95%;
   margin: 0 0 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -115,6 +116,7 @@ nav {
   padding: 5rem 10rem;
   letter-spacing: 1.2px;
   line-height: 1.5;
+  color:  var(--gray-text);
 }
 
 .hero-introduction h2 {
@@ -143,7 +145,7 @@ nav {
 .plant {
   position: absolute;
   bottom: 0;
-  left: -20%;
+  left: -10%;
   z-index: -1;
   transform: translateY(10%) rotateZ(-5deg) rotateX(-90deg);
   animation: plant-entrance 1.5s ease-in-out 0.5s forwards,
@@ -196,6 +198,58 @@ nav {
   display: none;
 }
 
+
+/************[About-Section]*/
+.about{
+min-height: 100vh;
+display: flex;
+flex-wrap: wrap;
+}
+
+.about-image{
+  flex: 1 1 40rem;
+  position: relative;
+}
+
+.about-image h5{
+  position: absolute;
+  letter-spacing: 2rem;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+}
+
+.about-image img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+
+.about-text{
+  flex: 2 1 40rem;
+  justify-content: space-around;
+  background-color: var(--background-color);
+  color: whitesmoke;
+}
+
+.about-text div{
+  padding: 3rem 8rem;
+}
+
+.about-text h3{
+  padding: 2rem 0rem;
+  font-family: "Ruh1 Medium";
+}
+
+.about-text h2{
+  padding: 4rem;
+  font-family: "Vibes";
+}
+
+.about-text div p{
+  /*letter-spacing: 0.1rem;*/
+}
 
 /* reponsive site */
 
@@ -265,7 +319,6 @@ nav {
 
   .menu-check:checked ~ .burger span:nth-child(1) {
     transform: rotateZ(45deg)  translateY(300%);
-  /*transition:  0.8s ease-in-out;*/
   }
 
   .menu-check:checked ~ .burger span:nth-child(2) {
@@ -277,8 +330,11 @@ background: transparent;
 
   .menu-check:checked ~ .burger span:nth-child(3) {
     transform: rotateZ(-45deg) translateY(-300%);
-  /*transition:  0.8s ease-in-out;*/
+}
 
+/************[About-Section]*/
+.about-text div{
+  padding: 3rem 3rem;
 }
 
 
